@@ -1,0 +1,28 @@
+{
+  "name": "ahj_helpdesk_backend",
+  "version": "1.0.0",
+  "description": "[![Build status](https://ci.appveyor.com/api/projects/status/mgncrh9hketn6pfr?svg=true)](https://ci.appveyor.com/project/luxeivan/ahj-creditcardvalidator)",
+  "main": "index.js",
+  "scripts": {
+    "start": "forever -w server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luxeivan/ahj_helpdesk_backend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luxeivan/ahj_helpdesk_backend/issues"
+  },
+  "homepage": "https://github.com/luxeivan/ahj_helpdesk_backend#readme",
+  "dependencies": {
+    "koa": "^2.13.4",
+    "koa-body": "^5.0.0",
+    "koa-cors": "^0.0.16",
+    "koa-router": "^10.1.1"
+  },
+  "devDependencies": {
+    "forever": "^4.0.3"
+  }
+}
