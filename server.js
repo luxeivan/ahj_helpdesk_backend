@@ -62,9 +62,16 @@ app.use(async ctx => {
             ctx.response.body = ticketFull.filter(item => item.id == id);
             return;
         case 'removeTicket':
-            console.log(ctx.request.body)
             tickets = tickets.filter(obj => obj.id != ctx.request.body.id);
             ticketFull = ticketFull.filter(obj => obj.id != ctx.request.body.id);
+            ctx.response.body = 'success';
+            return;
+        case 'editTicket':
+            tickets[tickets.findIndex(item=>item.id == ctx.request.body.id)].name = ctx.request.body.name;
+            tickets[tickets.findIndex(item=>item.id == ctx.request.body.id)].status = ctx.request.body.status;
+            ticketFull[ticketFull.findIndex(item=>item.id == ctx.request.body.id)].name = ctx.request.body.name;
+            ticketFull[ticketFull.findIndex(item=>item.id == ctx.request.body.id)].status = ctx.request.body.status;
+            ticketFull[ticketFull.findIndex(item=>item.id == ctx.request.body.id)].description = ctx.request.body.description;
             ctx.response.body = 'success';
             return;
         case 'createTicket':
@@ -82,8 +89,6 @@ app.use(async ctx => {
                 status: false,
                 created: Date.now()
             });
-            console.log(ctx.request.body);
-            console.log(ticketFull);
             ctx.response.body = 'success';
 
             return;
